@@ -2,9 +2,9 @@
 
 set -euox pipefail
 
-if [[ ${IMAGE} =~ ucore ]]; then
-  dnf5 remove -y docker-cli moby-engine
-fi
+# if [[ ${IMAGE} =~ ucore ]]; then
+#   dnf5 remove -y docker-cli moby-engine
+# fi
 
 # Setup repo
 cat << EOF > /etc/yum.repos.d/docker-ce.repo

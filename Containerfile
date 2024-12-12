@@ -48,6 +48,9 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 
 
 
+ARG BASE_IMAGE="onyx"
+ARG IMAGE="onyx"
+
 
 ### 3. MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
@@ -61,7 +64,7 @@ RUN --mount=type=bind,from=ctx,src=/,dst=/ctx \
     mkdir -p /var/lib && mv /staged-alternatives /var/lib/alternatives && \
     mkdir -p /var/tmp && \
     chmod -R 1777 /var/tmp
-    
+
 ## NOTES:
 # - /var/lib/alternatives is required to prevent failure with some RPM installs
 # - All RUN commands must end with ostree container commit
